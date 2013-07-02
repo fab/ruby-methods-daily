@@ -4,7 +4,7 @@ Found yourself struggling to remember Ruby method names? Want to see more of the
 
 Ruby Methods Daily is a daily email service that sends you three methods of popular Ruby classes/modules from the [Ruby Docs website](http://ruby-doc.org). External links to the docs are included with each method if you want to have a further look.
 
-**Sign up [here](http://eepurl.com/A7Ozb).**
+### **Sign up [here](http://eepurl.com/A7Ozb)**
 
 ## Preview
 
