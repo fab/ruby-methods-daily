@@ -3,7 +3,7 @@ require 'open-uri'
 require 'gibbon'
 
 def docs_url(classname, method_link = '')
-  "http://www.ruby-doc.org/core-1.9.3/#{classname}.html" + "#{method_link}"
+  "http://www.ruby-doc.org/core-2.0.0/#{classname}.html" + "#{method_link}"
 end
 
 def random_class
