@@ -7,7 +7,7 @@ def docs_url(classname, method_link = '')
 end
 
 def random_class
-  ['Array', 'Enumerable', 'Hash', 'Numeric', 'Object', 'String'].sample
+  ['Array', 'Enumerable', 'Hash', 'Numeric', 'Object', 'Range', 'Regexp', 'String', 'Time'].sample
 end
 
 def random_method(classname)
