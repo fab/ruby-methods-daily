@@ -142,8 +142,8 @@ def generate_email_html
 end
 
 def create_mailchimp_campaign(html)
-  @gb = Gibbon.new
-  @gb.campaignCreate({:type => 'regular',
+  @gb = Gibbon::API.new
+  @gb.campaigns.create({:type => 'regular',
                      :options => {:list_id => '28baf018f9',
                                   :subject => "Ruby Methods Daily - #{Time.now.strftime('%b %d')}",
                                   :from_email => 'fab.mackojc@gmail.com',
@@ -156,11 +156,11 @@ def create_mailchimp_campaign(html)
 end
 
 def send_mailchimp_campaign(cid)
-  @gb.campaignSendNow({:cid => cid})
+  @gb.campaigns.send({:cid => cid})
 end
 
 def create_and_send_email
   html = generate_email_html
-  cid = create_mailchimp_campaign(html)
-  send_mailchimp_campaign(cid)
+  campaign = create_mailchimp_campaign(html)
+  send_mailchimp_campaign(campaign['id'])
 end
