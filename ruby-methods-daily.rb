@@ -141,11 +141,21 @@ def generate_email_html
   </html>"
 end
 
+def is_weekend?
+  today = Time.now
+  today.saturday? || today.sunday?
+end
+
+def email_subject
+  subject = "Ruby Methods Daily - #{Time.now.strftime('%b %d')}"
+  is_weekend? ? subject + " (Weekend Email)" : subject
+end
+
 def create_mailchimp_campaign(html)
   @gb = Gibbon::API.new
   @gb.campaigns.create({:type => 'regular',
                      :options => {:list_id => '28baf018f9',
-                                  :subject => "Ruby Methods Daily - #{Time.now.strftime('%b %d')}",
+                                  :subject => "#{email_subject}",
                                   :from_email => 'fab.mackojc@gmail.com',
                                   :from_name => 'Ruby Methods Daily',
                                   :to_name => '*|FNAME|*',
